@@ -1,0 +1,52 @@
+body{
+    background-color: rgb(199, 200, 200);
+    
+    
+    
+}
+
+header{
+    height: 10vh;
+    width: 100vw;
+    
+}
+
+.contenu{
+    height: 10rem ;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+}
+
+.formInput{
+    height: 45px;
+    display: flex;
+}
+
+
+.inputSearch{
+    height: 100%;
+    width: 900px;
+    border-radius: 0px 50px 50px 0px;
+    padding: 0;
+    border: 0;
+}
+
+.selectInput{
+    height:100%;
+    width: 150px;
+    border: 0;
+    border-radius: 15px 0px 0px 15px;
+    text-align: center;
+    text-align-last: center;
+    
+    
+}
+
+.user{
+    font-size: 35px;
+
+}
+

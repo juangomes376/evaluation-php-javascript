@@ -27,6 +27,8 @@
             $requete->execute();
             $listeTypes = $requete->fetchAll(); 
 
+            
+
 ?>
 
     
@@ -51,6 +53,10 @@
         </form>
         </div>
         
+           <div name="pub-voiture" >
+
+           </div> 
+
     </div>
 
 

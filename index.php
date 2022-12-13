@@ -1,66 +1,118 @@
+<?php
+if(!isset($_SESSION)) {
+    session_start();
+}
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./assets/image/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="./assets/css/index.css">
-    <link rel="stylesheet" href="https://bootswatch.com/5/cyborg/bootstrap.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
-    <title>teste pica</title>
+    <?php include 'header.php'; ?>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./assets/css/carrosel.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script defer src="./assets/js/carrosel.js"></script>
+    <title>Home</title>
 </head>
 <body>
 
 <?php include 'navbar.php'; ?>
 
 <?php
+    include('conexao.php');
+           
+            
+                $requete = $conexion->prepare("SELECT * FROM Types");
+                $requete->execute();
+                $listeTypes = $requete->fetchAll();   
+            
+                $requete2 = $conexion->prepare("SELECT * FROM produits ;");
+                $requete2->execute();
+                $carroselVoiture = $requete2->fetchALL();
+                
+                
+                
 
-            $conexion = new PDO(
-                "mysql:host=localhost;dbname=loja;charset=utf8",
-                'root',
-                ''
-            );
-            // preparation de la requete
-            $requete = $conexion->prepare("SELECT * FROM Types");
-            // execution de la requete
-            $requete->execute();
-            $listeTypes = $requete->fetchAll(); 
 
             
-
 ?>
-
-    
-    
+    <?php
+        include('modal.php');
+    ?>
     <div class="contenu" >
-        
-        
         <form method= "POST" class="formInput" action="resultat.php">
-            <select name="type"class="selectInput navbar-light" name="type" id="">
-                <option disabled selected value>select an option</option>
-            <?php
-            foreach($listeTypes as $article) {
-            ?>
-                <option > <?= $article["nom"] ?> </option> 
-            <?php
-            };
-            ?>
+            <select name="type"class="selectInput navbar-light" name="type" id="type">
+                <option disabled selected value>Sélectionner une option</option>
+                <option value="tout">Tout</option>
+
+                <?php
+                foreach($listeTypes as $article) {
+                ?>
+                    <option > <?= $article["nom"] ?> </option> 
+                <?php
+                };
+                ?>
             </select>
             
             <input name="search" class="inputSearch navbar-light" type="text" placeholder="search">
         
         </form>
+    </div>    
+                    
+                            
+<section class="swiper mySwiper">
+
+        <div class="swiper-wrapper">
+
+        <?php
+                foreach($carroselVoiture as $article) {
+                ?>
+                    <div class="swiper-slide">
+                        <div class="carta " >
+                            <h3 class="nom"><?php  echo $article["nom"]; ?></h3>
+                            <img src="<?php  echo $article["url_img"]; ?>" alt=""  >
+                            <div class="">
+                                <h5 class="prix"> <?php  echo $article["prix"]; ?> $</h5>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                };
+        ?>
+
         </div>
-        
-           <div name="pub-voiture" >
-
-           </div> 
-
-    </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+  </section>
+    
 
 
 
 
+
+                    
+<!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 5,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+  </script>
 </body>
+
+
+
+
 </html>

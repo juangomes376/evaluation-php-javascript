@@ -1,8 +1,12 @@
+<?php
+    session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <?php include 'header.php'; ?>
-    
     <title>Home</title>
 </head>
 <body>
@@ -10,17 +14,12 @@
 <?php
     include('conexao.php');
     
-    $typeproduit = $_POST['type'];
+        $user = $_SESSION['nome'];
 
-    if($typeproduit == "tout"){
-        $requete = $conexion->prepare("SELECT * FROM produits WHERE nom LIKE ? ;");
-         $requete->execute(['%'.$_POST['search'].'%']);
-         $searchProduit = $requete->fetchALL();
-    }else{
-        $requete = $conexion->prepare("SELECT * FROM produits WHERE nom LIKE ? AND type = ?;");
-        $requete->execute(['%'.$_POST['search'].'%', $_POST['type']]);
+        $requete = $conexion->prepare("SELECT * FROM produits WHERE userAdm LIKE ?; ");
+        $requete->execute(['%'.$user.'%']);
         $searchProduit = $requete->fetchALL();
-    }
+    
 
 ?>
     

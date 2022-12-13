@@ -1,0 +1,131 @@
+#modale {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+#modale .contenu-m {
+    width: 500px;
+    height: 600px;
+    background-color: rgb(134, 135, 136);
+    margin: auto;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+}
+
+#modale #bouton {
+    width: 20px;
+    height: 20px;
+    color: black;
+    background-color: rgb(161, 161, 161);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 70px;
+    font-size: 30px;
+    margin: 15px;
+}
+
+
+
+#modale #bouton-ferme {
+    height: 30px;
+    width: 30px;
+    background-color: rgb(161, 161, 161);
+    color: black;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Verdana;
+    position: relative;
+    top: -205px;
+    left: -250px;
+
+
+}
+
+#modale #bouton-ferme:hover {
+    background-color: rgb(100, 99, 99);
+    color: aliceblue;
+}
+
+#modale h1 {
+    font-size: 12px;
+}
+
+#modale-on {
+    z-index: 3;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    
+}
+
+#modale-on .contenu-md {
+    width: 500px;
+    height: 600px;
+    background-color: rgb(134, 135, 136);
+    margin: auto;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+}
+
+#modale-on h1 {
+    font-size: 24px;
+}
+
+
+#modale-on #bouton-ferme {
+    height: 30px;
+    width: 30px;
+    background-color:rgb(134, 135, 136);
+    color: black;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Verdana;
+    position: relative;
+    top: -205px;
+    left: -250px;
+
+
+}
+
+.button-md{
+    height: min-content;
+    width: max-content;
+    background-color: rgb(70, 70, 71);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+
+
+}
+
+.button-b{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}

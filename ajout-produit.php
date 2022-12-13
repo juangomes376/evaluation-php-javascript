@@ -1,20 +1,19 @@
+
+<?php include './session/protection.php'; ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://bootswatch.com/5/cyborg/bootstrap.css">
-    <title>Document</title>
+    <?php include 'header.php'; ?>
+    <title>Ajout produit</title>
 </head>
 <body>
+    
     <?php include 'navbar.php'; ?>
+    <?php include 'modal.php'; ?>
 <?php
-            $conexion = new PDO(
-                "mysql:host=localhost;dbname=loja;charset=utf8",
-                'root',
-                ''
-            );
+            include('conexao.php');
+
             // preparation de la requete
             $requete = $conexion->prepare("SELECT * FROM Types");
             // execution de la requete

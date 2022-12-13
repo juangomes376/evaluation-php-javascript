@@ -1,3 +1,39 @@
 .resultat{
     display: flex;
+    margin: 20px;
+    justify-content: center;
+}
+
+.carta{
+    min-height: 290px;
+    width: 350px;
+    padding: 15px;
+    background-color: rgb(123, 124, 125);
+}
+
+.carta img{
+    width: 100%;
+    height: 200px;
+}
+.resultat ul{
+    justify-self: start;
+    align-items: normal;
+    display: grid;
+    grid-template-columns: repeat(4, 350px);
+    -webkit-box-pack: var(--ntp-item-justify, start);
+    justify-content: var(--ntp-item-justify, start);
+    gap: 20px;
+}
+
+.nom{
+    color: rgb(204, 205, 205);
+}
+
+.prix{
+    padding-top: 15px;
+    color: rgb(204, 205, 205);
+}
+
+.description{
+    color: rgb(204, 205, 205);
 }

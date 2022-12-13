@@ -1,0 +1,27 @@
+#pub-voiture {
+    position: relative;
+    height: 425px;
+}
+
+#carroussel {
+    display: flex;
+    align-items: center;
+    margin-top: 20%;
+    justify-content: center;
+    user-select: none;
+
+}
+
+#fleche-gauche,
+#fleche-droite {
+    font-size: 40px;
+    margin: 20px;
+    background-color: rgb(161, 161, 161);
+    height: 55px;
+    width: 55px;
+    border-radius: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

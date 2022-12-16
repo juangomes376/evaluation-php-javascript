@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <?php include 'header.php'; ?>
+
+<?php include 'header.php'; ?>
     
     <title>Home</title>
 </head>
@@ -10,9 +10,9 @@
 <?php
     include('conexao.php');
     
-    $typeproduit = $_POST['type'];
+    
 
-    if($typeproduit == "tout"){
+    if($_POST['type'] == "tout"){
         $requete = $conexion->prepare("SELECT * FROM produits WHERE nom LIKE ? ;");
          $requete->execute(['%'.$_POST['search'].'%']);
          $searchProduit = $requete->fetchALL();
@@ -35,6 +35,7 @@
                             <div class="">
                                 <h5 class="prix"> <?php  echo $article["prix"]; ?> $</h5>
                             </div>
+                            <a href="details.php?id=<?= $article['id'] ?>" class="btn2">Details</a>
                     </div>
                 <?php
                 }

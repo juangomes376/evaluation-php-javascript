@@ -1,6 +1,6 @@
 .resultat{
     display: flex;
-    margin: 20px;
+    margin: 50px 20px;
     justify-content: center;
 }
 
@@ -36,4 +36,13 @@
 
 .description{
     color: rgb(204, 205, 205);
+}
+
+.btn2{
+    display: flex;
+    padding: 10px 20px;
+    text-decoration:solid;
+    user-select: none;
+    color: aliceblue;
+    background-color: black;
 }

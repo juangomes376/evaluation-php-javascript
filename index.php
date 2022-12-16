@@ -6,12 +6,8 @@ if(!isset($_SESSION)) {
 
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <?php include 'header.php'; ?>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="./assets/css/carrosel.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script defer src="./assets/js/carrosel.js"></script>
+
+<?php include 'header.php'; ?>
     <title>Home</title>
 </head>
 <body>
@@ -74,6 +70,7 @@ if(!isset($_SESSION)) {
                             <div class="">
                                 <h5 class="prix"> <?php  echo $article["prix"]; ?> $</h5>
                             </div>
+                            <a href="details.php?id=<?= $article['id'] ?>" class="btn2">Details</a>
                         </div>
                     </div>
                 <?php
@@ -97,7 +94,8 @@ if(!isset($_SESSION)) {
   <!-- Initialize Swiper -->
   <script>
     var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 5,
+        slidesPerView: "auto",
+        speed: 1500 ,
         spaceBetween: 30,
         loop: true,
         pagination: {
@@ -108,6 +106,9 @@ if(!isset($_SESSION)) {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
+        autoplay: {
+            delay: 1500,
+         },
       });
   </script>
 </body>

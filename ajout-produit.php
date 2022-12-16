@@ -3,8 +3,8 @@
 
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <?php include 'header.php'; ?>
+
+<?php include 'header.php'; ?>
     <title>Ajout produit</title>
 </head>
 <body>
@@ -23,16 +23,18 @@
             if(isset($_POST["nom"])){
 
                 $requete = $conexion->prepare(
-                'INSERT INTO produits ( nom, decription, prix, url_img, type) VALUES (?, ?, ?, ?,?)'
+                'INSERT INTO produits ( nom, decription, decription_en, prix, url_img, type, userAdm) VALUES (?, ?, ?, ?, ?, ?, ?)'
                 );
             
 
                 $requete->execute([
                     $_POST['nom'], 
-                    $_POST['description'], 
+                    $_POST['description'],
+                    $_POST['descriptionEn'], 
                     $_POST['prix'], 
                     $_POST['url_img'],
-                    $_POST['type'] 
+                    $_POST['type'],
+                    $_SESSION['id'] 
                 ]);
 
             };
@@ -49,6 +51,12 @@
     <div  class="form-group">
       <label for="inputDescription" class="form-label mt-4">Description</label>
       <textarea name="description" class="form-control" id="inputDescription" placeholder="description du produit" rows="3"></textarea>
+      <div class="invalid-feedback"> 20 caracter min</div>
+    </div>
+
+    <div  class="form-group">
+      <label for="inputDescription" class="form-label mt-4">Description</label>
+      <textarea name="descriptionEn" class="form-control" id="inputDescription" placeholder="description du produit" rows="3"></textarea>
       <div class="invalid-feedback"> 20 caracter min</div>
     </div>
 

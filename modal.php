@@ -2,18 +2,18 @@
 <?php
 include('./conexao-user.php');
 
-if(isset($_POST['email']) || isset($_POST['senha'])) {
+if(isset($_POST['user']) || isset($_POST['senha'])) {
 
-    if(strlen($_POST['email']) == 0) {
+    if(strlen($_POST['user']) == 0) {
         echo "Preencha seu e-mail";
     } else if(strlen($_POST['senha']) == 0) {
         echo "Preencha sua senha";
     } else {
 
-        $email = $mysqli->real_escape_string($_POST['email']);
+        $email = $mysqli->real_escape_string($_POST['user']);
         $senha = $mysqli->real_escape_string($_POST['senha']);
 
-        $sql_code = "SELECT * FROM user WHERE email = '$email' AND password = '$senha'";
+        $sql_code = "SELECT * FROM user WHERE user = '$email' AND password = '$senha'";
         $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
 
         $quantidade = $sql_query->num_rows;
@@ -22,14 +22,10 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
             
             $usuario = $sql_query->fetch_assoc();
 
-            
-
             $_SESSION['id'] = $usuario['ID'];
             $_SESSION['nome'] = $usuario['user'];
 
-            header("Location: index.php");
-        
-            
+            // header("Location: index.php");
 
         } else {
             echo "Falha ao logar! E-mail ou senha incorretos";
@@ -43,23 +39,23 @@ if(!isset($_SESSION['nome'])) {
  ?>   
     <div id="modale" >
         <div class="contenu-m">
-            <div id="bouton-ferme" class="bouton">
-                <i class="fa-solid fa-xmark"></i>
-            </div>
+            <div id="bouton-ferme" ><i class="fa-solid fa-xmark"></i></div>    
             
-            <h1>Acesse sua conta</h1>
-            <form action="" method="POST">
+            
+            <form  action="" method="POST">
+                <h1>Acesse sua conta</h1>
                 <p>
                     <label>E-mail</label>
-                    <input type="text" name="email">
+                    <input type="text" name="user">
                 </p>
                 <p>
                     <label>Senha</label>
                     <input type="password" name="senha">
                 </p>
-                <p>
-                    <button type="submit">Entrar</button>
-                </p>
+                <div class="menu-modal" >
+                    <button  class="teste" type="submit">Entrar</button>
+                    <button  class="teste" type="submit" formaction="/inscrisao.php">Inscrisao</button>
+                </div>
             </form>
         </div>
 </div>

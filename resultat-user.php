@@ -14,7 +14,7 @@
 <?php
     include('conexao.php');
     
-        $user = $_SESSION[''];
+        $user = $_SESSION['id'];
 
         $requete = $conexion->prepare("SELECT * FROM produits WHERE userAdm LIKE ?; ");
         $requete->execute(['%'.$user.'%']);

@@ -76,18 +76,11 @@ if(!isset($_SESSION)) {
                 <?php
                 };
         ?>
-
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        
   </section>
     
-
-
-
-
-
-                    
+               
 <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
@@ -95,9 +88,10 @@ if(!isset($_SESSION)) {
   <script>
     var swiper = new Swiper(".mySwiper", {
         slidesPerView: "auto",
-        speed: 1500 ,
-        spaceBetween: 30,
+        speed: 3500 ,
+        spaceBetween: 15,
         loop: true,
+        freeMode: true,
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
@@ -107,9 +101,10 @@ if(!isset($_SESSION)) {
           prevEl: ".swiper-button-prev",
         },
         autoplay: {
-            delay: 1500,
+            delay: 500,
+            disableOnInteraction:false,
          },
-      });
+        });
   </script>
 </body>
 

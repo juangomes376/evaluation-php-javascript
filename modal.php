@@ -25,7 +25,7 @@ if(isset($_POST['user']) || isset($_POST['senha'])) {
             $_SESSION['id'] = $usuario['ID'];
             $_SESSION['nome'] = $usuario['user'];
 
-            // header("Location: index.php");
+             header("Location: index.php");
 
         } else {
             echo "Falha ao logar! E-mail ou senha incorretos";
@@ -44,13 +44,11 @@ if(!isset($_SESSION['nome'])) {
             
             <form  action="" method="POST">
                 <h1>Acesse sua conta</h1>
-                <p>
-                    <label>E-mail</label>
-                    <input type="text" name="user">
+                <p> 
+                    <input placeholder="E-mail" type="text" name="user">
                 </p>
                 <p>
-                    <label>Senha</label>
-                    <input type="password" name="senha">
+                    <input placeholder="Senha"  type="password" name="senha">
                 </p>
                 <div class="menu-modal" >
                     <button  class="teste" type="submit">Entrar</button>
@@ -66,20 +64,15 @@ if(!isset($_SESSION['nome'])) {
 ?>
     <div id="modale-on">
         <div class="contenu-md">
-            <div id="bouton-ferme" class="bouton">
-                <i class="fa-solid fa-xmark"></i>
+            <div id="bouton-ferme" class="bouton"><i class="fa-solid fa-xmark"></i></div>
+            <h1>Voce esta conectado</h1>
+            <div>
+                <button  class="teste" type="submit" formaction="./resultat-user.php">tout produit</button>
+                <button  class="teste" type="submit" formaction="./ajout-produit.php">Ajouter produit</button>
+                <button  class="teste"   formation="./session/logout.php">logout</button>
             </div>
-            <h1>voce esta conectado</h1>
-            <p class="button-md" >
-                <a href="./resultat-user.php" class="button-b">tout produit</a>
-            </p>
 
-            <p class="button-md" >
-                <a href="./ajout-produit.php" class="button-b">Ajouter produit</a>
-            </p>
-            <p class="button-md">
-                <a href="./session/logout.php" class="button-b" >logout</a>
-            </p>
+         
         </div>
     </div>
 

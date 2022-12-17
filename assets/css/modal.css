@@ -69,8 +69,7 @@
     border-radius: 10px;
     padding: 15px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items:center;
     flex-direction: column;
 
 
@@ -81,18 +80,20 @@
 }
 
 
-#bouton-ferme {
+#modale-on #bouton-ferme {
     height: 30px;
     width: 30px;
-    background-color:rgb(7, 248, 248);
+    background-color: rgb(161, 161, 161);
     color: black;
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: Verdana;
-    top: -27px;
-    left: -250px;
+    position: relative;
+    top: -28px;
+    left: -245px;
+    
 }
 
 form{
@@ -129,7 +130,7 @@ form{
     padding: 7px 15px;
     height: max-content;
     width: max-content;
-    text-decoration: none;
+    
     font-size: 15px;
     margin: 0;
 

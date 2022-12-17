@@ -9,6 +9,7 @@
     width: 350px;
     padding: 15px;
     background-color: rgb(123, 124, 125);
+    border-radius: 25px;
 }
 
 .carta img{
@@ -44,5 +45,13 @@
     text-decoration:solid;
     user-select: none;
     color: aliceblue;
-    background-color: black;
+    background-color: rgb(157, 159, 159);
+    margin: 8px;
+    border-radius: 15px;
+    
+    
+}
+
+.btn2:hover{
+    background-color: rgb(126, 128, 128);
 }

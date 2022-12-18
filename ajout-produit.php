@@ -12,7 +12,7 @@
     <?php include 'navbar.php'; ?>
     <?php include 'modal.php'; ?>
 <?php
-            include('conexao.php');
+            include('./session/conexao.php');
 
             // preparation de la requete
             $requete = $conexion->prepare("SELECT * FROM Types");

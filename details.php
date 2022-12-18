@@ -7,7 +7,7 @@
 <body>
     <?php include 'navbar.php'; ?>
 <?php
-    include('conexao.php');
+    include('./session/conexao.php');
 
         $requete = $conexion->prepare("SELECT * FROM produits WHERE ID  = ?;");
         $requete->execute([ $_GET['id']]);

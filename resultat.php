@@ -8,7 +8,7 @@
 <body>
     <?php include 'navbar.php'; ?>
 <?php
-    include('conexao.php');
+    include('./session/conexao.php');
     
     
 

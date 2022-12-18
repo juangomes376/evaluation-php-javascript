@@ -1,16 +1,8 @@
 <?php include 'header.php'; ?> 
-
 <?php include 'navbar.php'; ?>
-
 <h1>Modifier produit</h1>
-
+<?php include './session/conexao.php'; ?>
 <?php
-$connexion = new PDO(
-                "mysql:host=localhost;dbname=loja;charset=utf8",
-                'root',
-                ''
-            );
-
 //si l'utilisateur a soumis le formulaire
 if (isset($_POST['nom'])) {
 

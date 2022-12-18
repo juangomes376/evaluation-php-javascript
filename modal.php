@@ -1,6 +1,6 @@
 
 <?php
-include('./conexao-user.php');
+include('./session/conexao-user.php');
 
 if(isset($_POST['user']) || isset($_POST['senha'])) {
 

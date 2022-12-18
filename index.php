@@ -15,7 +15,7 @@ if(!isset($_SESSION)) {
 <?php include 'navbar.php'; ?>
 
 <?php
-    include('conexao.php');
+    include('./session/conexao.php');
            
             
                 $requete = $conexion->prepare("SELECT * FROM Types");

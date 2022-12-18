@@ -7,13 +7,10 @@ include 'navbar.php';
 
 <h1>Voulez-vous vraiment supprimer ce produit ? </h1>
 
+<?php include './session/conexao.php'; ?>
 <?php if (isset($_GET['confirme'])) {
     //connexion base de donnée
-    $connexion = new PDO(
-                "mysql:host=localhost;dbname=loja;charset=utf8",
-                'root',
-                ''
-            );
+    
 
     //préparation de  la requête
     $requete = $connexion->prepare('DELETE FROM produits WHERE id = ?');

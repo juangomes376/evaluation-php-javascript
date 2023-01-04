@@ -21,5 +21,5 @@ if(!isset($_SESSION)) {
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
     <!-- javascript -->
 <script defer src="./assets/js/modal.js"></script>
-<script defer src="./assets/js/carrosel.js"></script>
+<script defer src="./assets/js/regle.js"></script>
     

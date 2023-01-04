@@ -201,6 +201,20 @@ header{
 
 
 
+.invalid-feedback{
+    background-color: black;
+    width: max-content;
+    font-size: 15px;
+    font-weight: 900;
+    color: red;
+    padding: 2px 5px ;
+}
+
+
+.db-n{
+    display: none;
+}
+
 
 
 

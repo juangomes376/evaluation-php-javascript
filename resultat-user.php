@@ -22,6 +22,13 @@
     
 <div class="resultat" >
     <ul>
+
+
+<script>
+    let articleAsupprimer = null
+</script>    
+
+
     <?php
     foreach($searchProduit as $article) {
                 ?>   
@@ -33,10 +40,30 @@
                             </div>
 
                             
-                            <a id="testeteste"  class="btn2">Supprimer</a>
+                            <!-- <a id="testeteste" class="btn2" ">Supprimer</a> -->
                             <a href="modifier-produit.php?id=<?= $article['id'] ?>" class="btn2">Modifier</a>
                             <a href="details.php?id=<?= $article['id'] ?>" class="btn2">Details</a>
                             
+                            
+                                <a id="delete-<?= $article['id'] ?>" class="btn2" >Supprime</a>
+                            
+                            <script>
+
+                                document
+                                .getElementById('delete-<?= $article['id'] ?>')
+                                .addEventListener('click', e => {
+                                    articleAsupprimer = <?= $article['id'] ?>
+
+
+                                    const maModale = document.getElementById('modale-sup')
+                                    maModale.style.display = 'flex'
+                                    
+                                })
+
+
+                                
+
+                            </script>
                     </div>
                 <?php
                 }
@@ -46,6 +73,7 @@
 
    
 </body>
+
 
 
 </html>

@@ -36,13 +36,13 @@ BoutonFerme2.addEventListener('click', evenementBouton4)
 
 // modale suprime produit
 
-function evenementBouton5() {
-    const maModale = document.getElementById('modale-sup')
-    maModale.style.display = 'flex'
-}
-const monBouton3 = document.getElementById('testeteste')
+// function evenementBouton5() {
+//     const maModale = document.getElementById('modale-sup')
+//     maModale.style.display = 'flex'
+// }
+// const monBouton3 = document.getElementById('testeteste')
   
-monBouton3.addEventListener('click', evenementBouton5)
+// monBouton3.addEventListener('click', evenementBouton5)
 
 function evenementBouton6() {
     const maModale = document.getElementById('modale-sup')

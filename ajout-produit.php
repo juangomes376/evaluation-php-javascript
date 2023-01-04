@@ -44,31 +44,31 @@
     <div  class="form-group <?php  if($erreurNom) echo 'has-danger'?>">
         <label class="col-form-label mt-4" for="inputNom">Nom</label>
         <input value="<?= $_POST['nom'] ?? '' ?>" name="nom" type="text" class="form-control <?php  if($erreurNom) echo 'is-invalid'?>" placeholder="Nom du produit" id="inputNom">
-        <!-- <div  class="invalid-feedback"><?= $messageErrorNom?></div> -->
+        <div id="alertNom" class="db-n invalid-feedback"><i class="fa-solid fa-circle-exclamation"></i>  20 caracter max</div>
     </div>
 
     <div  class="form-group">
       <label for="inputDescription" class="form-label mt-4">Description</label>
       <textarea name="description" class="form-control" id="inputDescription" placeholder="description du produit" rows="3"></textarea>
-      <div class="invalid-feedback"> 20 caracter min</div>
+      <div id="alertDescription" class="db-n invalid-feedback"><i class="fa-solid fa-circle-exclamation"></i>  20 caracter min</div>
     </div>
 
     <div  class="form-group">
-      <label for="inputDescription" class="form-label mt-4">Description</label>
-      <textarea name="descriptionEn" class="form-control" id="inputDescription" placeholder="description du produit" rows="3"></textarea>
-      <div class="invalid-feedback"> 20 caracter min</div>
+      <label for="inputDescription" class="form-label mt-4">Description Anglis</label>
+      <textarea name="descriptionEn" class="form-control" id="inputDescriptionEn" placeholder="description du produit" rows="3"></textarea>
+      <div id="alertDescriptionEn" class="db-n invalid-feedback"><i class="fa-solid fa-circle-exclamation"></i>  20 caracter min</div>
     </div>
 
     <div  class="form-group">
         <label class="col-form-label mt-4" for="inputPrix">Prix</label>
         <input name="prix" type="number" class="form-control" placeholder="prix du produit (ex: 5.99)" id="inputPrix">
-        <div class="invalid-feedback"> gratuit se pas possible</div>
+        <div id="alertPrix" class="db-n invalid-feedback"><i class="fa-solid fa-circle-exclamation"></i></div>
     </div>
 
     <div  class="form-group">
         <label class="col-form-label mt-4" for="inputUrlImage">URL image</label>
-        <input name="url_img" type="text" class="form-control" placeholder="htpps://mon-site/image.jpg" id="inputUrlImage">
-        <div class="invalid-feedback"></div>    
+        <input name="url_img" type="text" class="form-control" placeholder=" formatos disponiveis ...." id="inputUrlImage">
+        <div class="db-n invalid-feedback"><i class="fa-solid fa-circle-exclamation"></div>    
     </div>
 
 

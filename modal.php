@@ -13,7 +13,7 @@ if(isset($_POST['user']) || isset($_POST['senha'])) {
         $email = $mysqli->real_escape_string($_POST['user']);
         $senha = $mysqli->real_escape_string($_POST['senha']);
 
-        $sql_code = "SELECT * FROM user WHERE user = '$email' AND password = '$senha'";
+        $sql_code = "SELECT * FROM user WHERE email = '$email' AND password = '$senha'";
         $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
 
         $quantidade = $sql_query->num_rows;
@@ -22,8 +22,8 @@ if(isset($_POST['user']) || isset($_POST['senha'])) {
             
             $usuario = $sql_query->fetch_assoc();
 
-            $_SESSION['id'] = $usuario['ID'];
-            $_SESSION['nome'] = $usuario['user'];
+            $_SESSION['id'] = $usuario['id'];
+            $_SESSION['nome'] = $usuario['nom'];
 
              header("Location: index.php");
 
@@ -44,15 +44,18 @@ if(!isset($_SESSION['nome'])) {
             
             <form  action="" method="POST">
                 <h1>Acesse sua conta</h1>
-                <p> 
+                <div class="form-input" >
                     <input placeholder="E-mail" type="text" name="user">
-                </p>
-                <p>
                     <input placeholder="Senha"  type="password" name="senha">
-                </p>
+                </div>
+                
                 <div class="menu-modal" >
-                    <button  class="teste" type="submit">Entrar</button>
-                    <button  class="teste" type="submit" formaction="/inscrisao.php">Inscrisao</button>
+                    <a >
+                        <button type="submit" class="teste" >Entrar</button>
+                    </a>
+                    <a href="./inscrisao.php">
+                        <button class="teste" >inscrisao</button>
+                    </a>
                 </div>
             </form>
         </div>
@@ -65,11 +68,19 @@ if(!isset($_SESSION['nome'])) {
     <div id="modale-on">
         <div class="contenu-md">
             <div id="bouton-ferme" class="bouton"><i class="fa-solid fa-xmark"></i></div>
-            <h1>Voce esta conectado</h1>
+            <h1>Vous etes conecte <?php echo $_SESSION["nome"];?></h1>
             <div>
-                <button  class="teste" type="submit" formaction="./resultat-user.php">tout produit</button>
-                <button  class="teste" type="submit" formaction="./ajout-produit.php">Ajouter produit</button>
-                <button  class="teste"   formation="./session/logout.php">logout</button>
+                
+                
+                <a href="./resultat-user.php">
+                    <button class="teste" >tout produit</button>
+                </a>
+                <a href="./ajout-produit.php">
+                    <button class="teste" >ajoutet produit</button>
+                </a>
+                <a href="./session/logout.php">
+                    <button class="teste" >logout</button>
+                </a> 
             </div>
 
          

@@ -1,23 +1,25 @@
 
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="./index.php">AUTOnew</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarColor02">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          
-        </li>
-      </ul>
-      <div id="bouton" class="bouton">
-        <i class="user fa-solid fa-circle-user d-flex"></i>
-      </div>
-    </div>
-  </div>
+<nav class="nav-bar">
+<a href="./index.php" class="logo">
+  <img src="./assets/image/logo.webp" alt="">
+</a>  
+<div class="nav-contenu" >
+
+</div>
+
+
+
+<div id="bouton" class="modal-user">
+  <i class="user fa-solid fa-user"></i>
+</div>
 </nav>
+<?php
+    include('modal.php');
+    include('modal-sup.php');
+?> 
+
+
 
 
 

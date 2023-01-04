@@ -2,12 +2,11 @@
     session_start();
 ?>
 
-
 <!DOCTYPE html>
 <html lang="fr">
 
     <?php include 'header.php'; ?>
-    <title>Home</title>
+    <title></title>
 </head>
 <body>
     <?php include 'navbar.php'; ?>
@@ -19,9 +18,6 @@
         $requete = $conexion->prepare("SELECT * FROM produits WHERE userAdm LIKE ?; ");
         $requete->execute(['%'.$user.'%']);
         $searchProduit = $requete->fetchALL();
-    
-        
-
 ?>
     
 <div class="resultat" >
@@ -35,7 +31,9 @@
                             <div class="">
                                 <h5 class="prix"> <?php  echo $article["prix"]; ?> $</h5>
                             </div>
-                            <a href="supprimer-produit.php?id=<?= $article['id'] ?>" class="btn2">Supprimer</a>
+
+                            
+                            <a id="testeteste"  class="btn2">Supprimer</a>
                             <a href="modifier-produit.php?id=<?= $article['id'] ?>" class="btn2">Modifier</a>
                             <a href="details.php?id=<?= $article['id'] ?>" class="btn2">Details</a>
                             
@@ -46,8 +44,8 @@
     </ul>
 </div>
 
-<?php
-    include('modal.php');
-?>    
+   
 </body>
+
+
 </html>

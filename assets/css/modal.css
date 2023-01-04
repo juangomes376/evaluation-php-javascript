@@ -3,7 +3,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.704);
     height: 100%;
     width: 100%;
     z-index: 2;
@@ -11,7 +11,7 @@
 #modale .contenu-m {
     width: 500px;
     height: 600px;
-    background-color: rgb(134, 135, 136);
+    background-color: var(--primary);
     margin: auto;
     border-radius: 10px;
     padding: 15px;
@@ -19,34 +19,32 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
-
 }
 
 
 #modale #bouton-ferme {
     height: 30px;
     width: 30px;
-    background-color: rgb(161, 161, 161);
-    color: black;
+    background-color:rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: Verdana;
     position: relative;
-    
-
-
+    top: -27px;
+    left: -265px;
 }
 
 #modale #bouton-ferme:hover {
-    background-color: rgb(100, 99, 99);
+    background-color: rgb(109, 3, 3);
     color: aliceblue;
 }
 
 #modale h1 {
-    font-size: 12px;
+    font-size: 32px;
+    color: aliceblue;
 }
 
 #modale-on {
@@ -64,42 +62,46 @@
 #modale-on .contenu-md {
     width: 500px;
     height: 600px;
-    background-color: rgb(134, 135, 136);
+    background-color: var(--primary);
     margin: auto;
     border-radius: 10px;
     padding: 15px;
     display: flex;
     align-items:center;
     flex-direction: column;
+    
 
 
 }
 
 #modale-on h1 {
-    font-size: 24px;
+    font-size: 32px;
+    color: aliceblue;
 }
 
 
 #modale-on #bouton-ferme {
     height: 30px;
     width: 30px;
-    background-color: rgb(161, 161, 161);
-    color: black;
+    background-color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: Verdana;
     position: relative;
-    top: -28px;
-    left: -245px;
+    top: -27px;
+    left: -265px;
     
 }
 
-form{
-    height: 100%;
-    width: 100%;
+#modale-on #bouton-ferme:hover {
+    background-color: rgb(109, 3, 3);
+    color: aliceblue;
 }
+
+
 
 #modale form {
     display: flex;
@@ -109,6 +111,22 @@ form{
     height: 100%;
     width: 100%;
 }
+
+.form-input{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.form-input input{
+    width: 70%;
+    height: 30px;
+}
+
+
 
 .button-md{
     height: min-content;
@@ -127,16 +145,22 @@ form{
 
 .teste {
     background-color: black;
+    color: aliceblue;
     padding: 7px 15px;
     height: max-content;
     width: max-content;
-    
     font-size: 15px;
     margin: 0;
+    border: solid 2px rgb(47, 47, 47);
+}
 
+.teste:hover{
+    background-color: rgb(67, 66, 66);
+        color: aliceblue;
 }
 
 .menu-modal{
+    padding-top: 20px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -144,3 +168,31 @@ form{
     gap: 15px;
     height: 20px;
 }
+
+
+
+#modale-sup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.704);
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+
+#modale-sup .contenu-m {
+    width: 500px;
+    height: 600px;
+    background-color: var(--primary);
+    margin: auto;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+

@@ -28,8 +28,6 @@
                     </div>
     </ul>
     </div>        
-<?php
-    include('modal.php');
-?>    
+    
 </body>
 </html>

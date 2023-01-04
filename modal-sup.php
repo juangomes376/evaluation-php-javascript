@@ -1,6 +1,3 @@
-
-<h1>Voulez-vous vraiment supprimer ce produit ? </h1>
-
 <?php include './session/conexao.php'; ?>
 <?php if (isset($_GET['confirme'])) {
     //connexion base de donnée
@@ -17,6 +14,26 @@
 
     
 } ?>
+   
+    <div id="modale-sup" >
+        <div class="contenu-m">
+            
+            <form  action="" method="POST">
+                <h1>vous etes sur de suprimir cette produit</h1>
+                <button>nom</button>
+                <button id="bt-ferme" >oui</button>
+            </form>
+        </div>
+</div>
+
+
+<?php
+
+?>
+
+
+
+
 
 
 

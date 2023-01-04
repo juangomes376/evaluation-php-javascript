@@ -10,7 +10,6 @@
 <body>
     
     <?php include 'navbar.php'; ?>
-    <?php include 'modal.php'; ?>
 <?php
             include('./session/conexao.php');
 
@@ -23,7 +22,7 @@
             if(isset($_POST["nom"])){
 
                 $requete = $conexion->prepare(
-                'INSERT INTO produits ( nom, decription, decription_en, prix, url_img, type, userAdm) VALUES (?, ?, ?, ?, ?, ?, ?)'
+                'INSERT INTO produits ( nom, description, description_en, prix, url_img, type, userAdm) VALUES (?, ?, ?, ?, ?, ?, ?)'
                 );
             
 
@@ -40,12 +39,12 @@
             };
 
 ?>
-<form method= "POST" onsubmit="return valideFormulaire();" class="container mb-4" >
-
+<form method= "POST" onsubmit="return valideFormulaire();" class="ajout-produit" >
+<h1>Ajout produit </h1> 
     <div  class="form-group <?php  if($erreurNom) echo 'has-danger'?>">
         <label class="col-form-label mt-4" for="inputNom">Nom</label>
         <input value="<?= $_POST['nom'] ?? '' ?>" name="nom" type="text" class="form-control <?php  if($erreurNom) echo 'is-invalid'?>" placeholder="Nom du produit" id="inputNom">
-        <div  class="invalid-feedback"><?= $messageErrorNom?></div>
+        <!-- <div  class="invalid-feedback"><?= $messageErrorNom?></div> -->
     </div>
 
     <div  class="form-group">
@@ -74,8 +73,8 @@
 
 
 
-    <div class="form-group mt-4">
-        <select name="type"class="selectInput btn btn-primary" name="type" id="">
+    <div class="form-group ">
+        <select name="type"class="select" name="type" id="">
             <option disabled selected value> -- select an option -- </option>
             <?php
             foreach($listeTypes as $article) {
@@ -87,9 +86,9 @@
     </select>
 
     </div>
-    
-
-    <button  class="btn btn-primary mt-4">Ajouter l'article</button>
+    <div class="form-group" >
+            <button  class="">Ajouter l'article</button>
+    </div>
 
 </form>
 </body>

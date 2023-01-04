@@ -1,17 +1,23 @@
 <?php include 'header.php'; ?> 
 <?php include 'navbar.php'; ?>
-<h1>Modifier produit</h1>
 <?php include './session/conexao.php'; ?>
 <?php
+
+$requete = $conexion->prepare('SELECT * FROM produits WHERE id = ? ;');
+
+$requete->execute([$_GET['id']]);
+
+$produit = $requete->fetch();
+
 //si l'utilisateur a soumis le formulaire
 if (isset($_POST['nom'])) {
 
     //on enregistre les modifications
-    $requete = $connexion->prepare(
+    $requete = $conexion->prepare(
         "UPDATE produits 
          SET nom = ?, 
-             decription = ?,
-             decription_en = ?,
+             description = ?,
+             description_en = ?,
              prix = ?,
              url_img = ?
          WHERE id = ?"
@@ -30,20 +36,14 @@ if (isset($_POST['nom'])) {
     header('Location: index.php');
 }
 
-$requete = $connexion->prepare('SELECT * FROM produits WHERE id = ?');
 
-$requete->execute([$_GET['id']]);
 
-$produit = $requete->fetch();
-
-// echo '<pre>';
-// var_dump($produit);
-// echo '</pre>';
 ?>
 
-    <form method="POST" class="container mb-4">
+    <form class="modi-produit" method="POST" class="container mb-4">
+    <h1>Modifier produit</h1>    
         <div class="form-group">
-            <label class="col-form-label mt-4" for="inputNom">Nom</label>
+            <label class="c" for="inputNom">Nom</label>
             
             <input name="nom" value="<?= $produit[
                 'nom'
@@ -53,13 +53,13 @@ $produit = $requete->fetch();
 
         <div class="form-group">
             <label for="inputDescription" class="form-label mt-4">Description</label>
-            <textarea name="description" class="form-control" id="inputDescription" rows="3"><?= $produit['decription'] ?></textarea>
+            <textarea name="description" class="form-control" id="inputDescription" rows="3"><?= $produit['description'] ?></textarea>
             <div class="invalid-feedback">20 caractères minimum</div>
         </div>
 
         <div class="form-group">
             <label for="inputDescriptionen" class="form-label mt-4">Description anglais</label>
-            <textarea name="descriptionEn" class="form-control" id="inputDescriptionen" rows="3"></textarea>
+            <textarea name="descriptionEn" class="form-control" id="inputDescriptionen" rows="3"><?= $produit['description_en'] ?></textarea>
             <div class="invalid-feedback">20 caractères minimum</div>
         </div>
 
@@ -79,8 +79,10 @@ $produit = $requete->fetch();
             <div class="invalid-feedback"></div>
         </div>
 
-        <input type="submit" value="Modifier l'article" class="btn btn-primary mt-4">
-
+        <div class="form-group" >
+            <button  class="">Modifier l'article</button>
+        </div>         
+        
     </form>
 </body>
 </html>

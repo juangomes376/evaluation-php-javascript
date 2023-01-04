@@ -1,6 +1,13 @@
+:root{
+    
+    --primary: rgb(2, 76, 172);
+    --black: rgb(0, 0, 0);
+
+}
+
 body{
-    background-color: rgb(199, 200, 200);
-  
+    background-color: var(--primary);
+    margin: 0;
 }
 
 header{
@@ -10,16 +17,13 @@ header{
 }
 
 .contenu{
-    padding-top: 10%;
-    padding-bottom: 15%;
+    padding-top: 9%;
+    padding-bottom: 9%;
     height: 10rem ;
     width: 100%;
     align-items: center;
     justify-content: center;
     display: flex;
-
-   
-
 }
 
 .contenu form{
@@ -34,13 +38,7 @@ header{
 }
 
 
-.inputSearch{
-    height: 100%;
-    width: 900px;
-    border-radius: 0px 50px 50px 0px;
-    padding: 0;
-    border: 0;
-}
+
 
 .selectInput{
     height:100%;
@@ -50,19 +48,28 @@ header{
     border-radius: 15px 0px 0px 15px;
     text-align: center;
     text-align-last: center;
+    background-color: var(--black);
+    color: aliceblue;
     
     
 }
 
-.user{
-    font-size: 35px;
-
+.inputSearch {
+    height: 100%;
+    width: 900px;
+    border-radius: 0px 50px 50px 0px;
+    padding-left: 10px;
+    border: 0;
+    background-color: var(--black);
+    color: aliceblue;
 }
+
+
 
 
 .swiper {
     width: 95%;
-    display: flex;
+    
 }
 
 
@@ -71,8 +78,6 @@ header{
 .swiper-wrapper {
     width: 100%;
     display: flex;
-    
-    
 }
 
 .swiper-slide {
@@ -90,12 +95,15 @@ header{
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
+    
 }
 
 
 
-.card,.swiper-slide {
+.swiper-slide {
     width: 350px!important;
+    
+    
 }
 
 .swiper-button-prev{
@@ -104,7 +112,92 @@ header{
 
 
 
+/* modi produit */
 
+.modi-produit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.modi-produit label {
+    color: aliceblue;
+    padding: 4px;
+
+
+}
+
+
+.modi-produit .form-group {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+
+
+.modi-produit .form-group button {
+    color: aliceblue;
+    background-color: var(--black);
+    padding: 10px 15px;
+    border: solid 1px aliceblue;
+    width: max-content;
+    cursor: pointer;
+}
+
+.modi-produit .select {
+    background-color: var(--black);
+    color: aliceblue;
+    border: none;
+    padding: 5px 10px;
+    width: min-content;
+}
+
+
+
+
+
+/* ajout produit */
+
+.ajout-produit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.ajout-produit label {
+    color: aliceblue;
+    padding: 4px;
+    
+
+}
+
+
+.ajout-produit .form-group {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+
+
+.ajout-produit .form-group button {
+    color: aliceblue;
+    background-color: var(--black);
+    padding: 10px 15px;
+    border: solid 1px aliceblue;;
+    width: max-content;
+    cursor: pointer;
+}
+
+.ajout-produit .select {
+    background-color: var(--black);
+    color: aliceblue;
+    border: none;
+    padding: 5px 10px;
+    width: min-content;
+}
 
 
 

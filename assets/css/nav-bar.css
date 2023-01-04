@@ -1,0 +1,40 @@
+.nav-bar{
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100vw;
+    
+}
+
+.logo{
+    width: 30px;
+    height: 30px;
+    padding: 0px 20px;
+}
+
+.logo img{
+    width: 30px;
+    height: 30px;
+}
+
+.nav-contenu{
+    width: 100%;
+}
+
+.modal-user {
+    height: 40px;
+    width: 40px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.modal-user i{
+   font-size: 30px;
+    color: aliceblue;
+    
+}

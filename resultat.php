@@ -2,7 +2,6 @@
 <html lang="fr">
 
 <?php include 'header.php'; ?>
-    
     <title>Home</title>
 </head>
 <body>
@@ -12,7 +11,7 @@
     
     
 
-    if($_POST['type'] == "tout"){
+    if(!isset($_POST['type'] ) || $_POST['type'] == "tout" ){
         $requete = $conexion->prepare("SELECT * FROM produits WHERE nom LIKE ? ;");
          $requete->execute(['%'.$_POST['search'].'%']);
          $searchProduit = $requete->fetchALL();
@@ -25,6 +24,7 @@
 ?>
     
 <div class="resultat" >
+    
     <ul>
     <?php
     foreach($searchProduit as $article) {
@@ -43,8 +43,6 @@
     </ul>
 </div>
 
-<?php
-    include('modal.php');
-?>    
+   
 </body>
 </html>

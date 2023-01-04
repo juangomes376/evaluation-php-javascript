@@ -25,20 +25,12 @@ if(!isset($_SESSION)) {
                 $requete2 = $conexion->prepare("SELECT * FROM produits ;");
                 $requete2->execute();
                 $carroselVoiture = $requete2->fetchALL();
-                
-                
-                
-
-
-            
+                        
 ?>
-    <?php
-        include('modal.php');
-    ?>
     <div class="contenu" >
         <form method= "POST" class="formInput" action="resultat.php">
-            <select name="type"class="selectInput navbar-light" name="type" id="type">
-                <option disabled selected value>Sélectionner une option</option>
+            <select name="type" class="selectInput " name="type" id="type">
+                <option  disabled selected value>Sélectionner une option</option>
                 <option value="tout">Tout</option>
 
                 <?php
@@ -50,8 +42,7 @@ if(!isset($_SESSION)) {
                 ?>
             </select>
             
-            <input name="search" class="inputSearch navbar-light" type="text" placeholder="search">
-        
+            <input name="search" class="inputSearch " type="text" placeholder="search">
         </form>
     </div>    
                     
@@ -88,7 +79,7 @@ if(!isset($_SESSION)) {
   <script>
     var swiper = new Swiper(".mySwiper", {
         slidesPerView: "auto",
-        speed: 3500 ,
+        speed: 5000 ,
         spaceBetween: 15,
         loop: true,
         freeMode: true,

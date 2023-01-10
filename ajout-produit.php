@@ -4,6 +4,7 @@
 <html lang="fr">
 
 <?php include 'header.php'; ?>
+<script defer src="./assets/js/regle.js"></script>
 <title>Ajout produit</title>
 </head>
 
@@ -42,25 +43,25 @@
         <h1>Ajout produit </h1>
         <div class="form-group <?php if ($erreurNom) echo 'has-danger' ?>">
             <label class="col-form-label mt-4" for="inputNom">Nom</label>
-            <input value="<?= $_POST['nom'] ?? '' ?>" name="nom" type="text" class="form-control <?php if ($erreurNom) echo 'is-invalid' ?>" placeholder="Nom du produit" id="inputNom">
+            <input id="inputNom" value="<?= $_POST['nom'] ?? '' ?>" name="nom" type="text" class="form-control <?php if ($erreurNom) echo 'is-invalid' ?>" placeholder="Nom du produit" id="inputNom">
             <div id="alertNom" class="db-n invalid-feedback"><i class="fa-solid fa-circle-exclamation"></i> 20 caracter max</div>
         </div>
 
         <div class="form-group">
             <label for="inputDescription" class="form-label mt-4">Description</label>
-            <textarea name="description" class="form-control" id="inputDescription" placeholder="description du produit" rows="3"></textarea>
+            <textarea id="inputDescription" name="description" class="form-control" placeholder="description du produit" rows="3"></textarea>
             <div id="alertDescription" class="db-n invalid-feedback"><i class="fa-solid fa-circle-exclamation"></i> 20 caracter min</div>
         </div>
 
         <div class="form-group">
             <label for="inputDescription" class="form-label mt-4">Description Anglis</label>
-            <textarea name="descriptionEn" class="form-control" id="inputDescriptionEn" placeholder="description du produit" rows="3"></textarea>
+            <textarea id="inputDescriptionEn" name="descriptionEn" class="form-control" placeholder="description du produit" rows="3"></textarea>
             <div id="alertDescriptionEn" class="db-n invalid-feedback"><i class="fa-solid fa-circle-exclamation"></i> 20 caracter min</div>
         </div>
 
         <div class="form-group">
             <label class="col-form-label mt-4" for="inputPrix">Prix</label>
-            <input name="prix" type="number" class="form-control" placeholder="prix du produit (ex: 5.99)" id="inputPrix">
+            <input id="inputPrix" name="prix" type="number" class="form-control" placeholder="prix du produit (ex: 5.99)">
             <div id="alertPrix" class="db-n invalid-feedback"></div>
         </div>
 

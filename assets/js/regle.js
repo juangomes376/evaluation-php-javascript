@@ -13,8 +13,7 @@ const formGroupNom = document.getElementById("alertNom");
 inputNom.addEventListener("keyup", validationInputNom);
 const messageErreurNom = formGroupNom.querySelector(".invalid-feedback");
 function validationInputNom(e) {
-  //si le champs nom contient + de 10 caractères après que
-  //l'utilisateur est appuyé sur une touche
+  
   if (inputNom.value.length > 20) {
     erreurNom = true;
     formGroupNom.classList.remove("db-n");

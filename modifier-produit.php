@@ -1,6 +1,7 @@
-<?php include 'header.php'; ?> 
+<?php include 'header.php'; ?>
 <?php include 'navbar.php'; ?>
 <?php include './session/conexao.php'; ?>
+<script defer src="./assets/js/regle.js"></script>
 <?php
 
 $requete = $conexion->prepare('SELECT * FROM produits WHERE id = ? ;');
@@ -40,49 +41,43 @@ if (isset($_POST['nom'])) {
 
 ?>
 
-    <form class="modi-produit" method="POST" class="container mb-4">
-    <h1>Modifier produit</h1>    
-        <div class="form-group">
-            <label class="c" for="inputNom">Nom</label>
-            
-            <input name="nom" value="<?= $produit[
-                'nom'
-            ] ?>" type="text" class="form-control" placeholder="Nom du produit" id="inputNom">
-            <div class="invalid-feedback"></div>
-        </div>
+<form class="modi-produit" method="POST" class="container mb-4">
+    <h1>Modifier produit</h1>
+    <div class="form-group">
+        <label class="c" for="inputNom">Nom</label>
+        <input id="inputNom" name="nom" value="<?= $produit['nom'] ?>" type="text" class="form-control" placeholder="Nom du produit">
+        <div id="alertNom" class="db-n invalid-feedback"><i class="fa-solid fa-circle-exclamation"></i></div>
+    </div>
 
-        <div class="form-group">
-            <label for="inputDescription" class="form-label mt-4">Description</label>
-            <textarea name="description" class="form-control" id="inputDescription" rows="3"><?= $produit['description'] ?></textarea>
-            <div class="invalid-feedback">20 caractères minimum</div>
-        </div>
+    <div class="form-group">
+        <label for="inputDescription" class="form-label mt-4">Description</label>
+        <textarea id="inputDescription" name="description" class="form-control" id="inputDescription" rows="3"><?= $produit['description'] ?></textarea>
+        <div id="alertDescription" class="db-n invalid-feedback"><i class="fa-solid fa-circle-exclamation"></i></div>
+    </div>
 
-        <div class="form-group">
-            <label for="inputDescriptionen" class="form-label mt-4">Description anglais</label>
-            <textarea name="descriptionEn" class="form-control" id="inputDescriptionen" rows="3"><?= $produit['description_en'] ?></textarea>
-            <div class="invalid-feedback">20 caractères minimum</div>
-        </div>
+    <div class="form-group">
+        <label for="inputDescriptionEn" class="form-label mt-4">Description anglais</label>
+        <textarea id="inputDescriptionEn" name="descriptionEn" class="form-control" rows="3"><?= $produit['description_en'] ?></textarea>
+        <div id="alertDescriptionEn" class="db-n invalid-feedback"><i class="fa-solid fa-circle-exclamation"></i></div>
+    </div>
 
-        <div class="form-group">
-            <label class="col-form-label mt-4" for="inputPrix">Prix</label>
-            <input name="prix"  value="<?= $produit[
-                'prix'
-            ] ?>"  type="number" class="form-control" placeholder="Prix du produit (ex : 5.99)" id="inputPrix">
-            <div class="invalid-feedback">Le prix doit être positif</div>
-       </div>
+    <div class="form-group">
+        <label class="col-form-label mt-4" for="inputPrix">Prix</label>
+        <input id="inputPrix" name="prix" value="<?= $produit['prix'] ?>" type="number" class="form-control" placeholder="Prix du produit (ex : 5.99)">
+        <div id="alertPrix" class="db-n invalid-feedback"></div>
+    </div>
 
-        <div class="form-group">
-            <label class="col-form-label mt-4" for="inputUrlImage">URL image</label>
-            <input name="url_image" value="<?= $produit[
-                'url_img'
-            ] ?>" type="text" class="form-control" placeholder="URL de l'image (ex: http://mon-site.com/image.jpg)" id="inputUrlImage">
-            <div class="invalid-feedback"></div>
-        </div>
+    <div class="form-group">
+        <label class="col-form-label mt-4" for="inputUrlImage">URL image</label>
+        <input id="inputUrl name=" url_image" value="<?= $produit['url_img'] ?>" type="text" class="form-control" placeholder="URL de l'image (ex: http://mon-site.com/image.jpg)">
+        <div id="alertUrl" class="db-n invalid-feedback"><i class="fa-solid fa-circle-exclamation"></i></div>
+    </div>
 
-        <div class="form-group" >
-            <button  class="">Modifier l'article</button>
-        </div>         
-        
-    </form>
+    <div class="form-group">
+        <button class="">Modifier l'article</button>
+    </div>
+
+</form>
 </body>
+
 </html>

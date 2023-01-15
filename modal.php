@@ -23,10 +23,19 @@ if (isset($_POST['user']) || isset($_POST['senha'])) {
 
             $_SESSION['id'] = $usuario['id'];
             $_SESSION['nome'] = $usuario['nom'];
-
-            header("Location: index.php");
         } else {
-            echo "Falha ao logar! E-mail ou senha incorretos";
+            echo '<script> 
+            
+            
+                document.addEventListener("DOMContentLoaded", onReady);
+
+                function onReady(){
+
+                evenementBouton() 
+
+                }
+            
+            </script>';
         }
     }
 }
@@ -46,10 +55,10 @@ if (!isset($_SESSION['nome'])) {
                 </div>
 
                 <div class="menu-modal">
-                    <a>
-                        <button type="submit" class="teste">Entrar</button>
-                    </a>
-                    <a href="./inscrisao.php">
+
+                    <!-- <button class="teste">Entrar</button> -->
+                    <input type="submit" value="OK">
+                    <a href="">
                         <button class="teste">inscrisao</button>
                     </a>
                 </div>

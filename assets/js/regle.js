@@ -62,7 +62,7 @@ inputPrix.addEventListener("change", validationInputPrix);
 const formGroupPrix = document.getElementById("alertPrix");
 const messageErreurPrix = document.getElementById("alertPrix");
 function validationInputPrix(e) {
-   if (inputPrix.value < 0) {
+   if (inputPrix.value <= 0) {
     erreurPrix = true;
     formGroupPrix.classList.remove("db-n");
     messageErreurPrix.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> Gratuite cet pa possible';

@@ -10,16 +10,18 @@
 }
 #modale .contenu-m {
     width: 500px;
-    height: 600px;
+    height: max-content;
     background-color: var(--primary);
     margin: auto;
     border-radius: 10px;
     padding: 15px;
+    padding-bottom: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     z-index: 3;
+
 }
 
 
@@ -48,25 +50,16 @@
     color: aliceblue;
 }
 
-#modale-on {
-    z-index: 2;
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    height: 100%;
-    width: 100%;
-    
-}
+
 
  .contenu-md {
     width: 500px;
-    height: 600px;
+    height: max-content;
     background-color: var(--primary);
     margin: auto;
     border-radius: 10px;
     padding: 15px;
+    padding-bottom: 80px;
     display: flex;
     align-items:center;
     flex-direction: column;

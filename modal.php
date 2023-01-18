@@ -1,48 +1,52 @@
 <?php
 include('./session/conexao-user.php');
+$_SESSION['erro'] = "falso";
+
+
 
 if (isset($_POST['user']) || isset($_POST['senha'])) {
 
-    if (strlen($_POST['user']) == 0) {
-        echo "Preencha seu e-mail";
-    } else if (strlen($_POST['senha']) == 0) {
-        echo "Preencha sua senha";
+
+    $email = $mysqli->real_escape_string($_POST['user']);
+    $senha = $mysqli->real_escape_string($_POST['senha']);
+
+    $sql_code = "SELECT * FROM user WHERE email = '$email' AND password = '$senha'";
+    $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
+
+    $quantidade = $sql_query->num_rows;
+
+    if ($quantidade == 1) {
+
+        $usuario = $sql_query->fetch_assoc();
+
+        $_SESSION['id'] = $usuario['id'];
+        $_SESSION['nome'] = $usuario['nom'];
+        $_SESSION['erro'] = "falso";
     } else {
-
-        $email = $mysqli->real_escape_string($_POST['user']);
-        $senha = $mysqli->real_escape_string($_POST['senha']);
-
-        $sql_code = "SELECT * FROM user WHERE email = '$email' AND password = '$senha'";
-        $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
-
-        $quantidade = $sql_query->num_rows;
-
-        if ($quantidade == 1) {
-
-            $usuario = $sql_query->fetch_assoc();
-
-            $_SESSION['id'] = $usuario['id'];
-            $_SESSION['nome'] = $usuario['nom'];
-        } else {
-            echo '<script> 
-            
-            
-                document.addEventListener("DOMContentLoaded", onReady);
-
-                function onReady(){
-
-                evenementBouton() 
-
-                }
-            
-            </script>';
-        }
+        $_SESSION['erro'] = "verdade";
     }
+}
+
+if ($_SESSION['erro'] == "verdade") {
+    echo '<script >
+
+    window.addEventListener("DOMContentLoaded", (event) => {
+
+        const maModale = document.getElementById("modale")
+        maModale.style.display = "flex"
+        
+        const messageErreurLogin = document.getElementById("alertLogin");
+        messageErreurLogin.classList.remove("db-n");
+        messageErreurLogin.innerHTML = "ERRO email ou password pas correct";
+                    
+    });
+         </script>';
 }
 
 if (!isset($_SESSION['nome'])) {
 ?>
     <div id="modale">
+
         <div class="contenu-m">
             <div id="bouton-ferme"><i class="fa-solid fa-xmark"></i></div>
 
@@ -52,14 +56,17 @@ if (!isset($_SESSION['nome'])) {
                 <div class="form-input">
                     <input placeholder="E-mail" type="text" name="user">
                     <input placeholder="Senha" type="password" name="senha">
+                    <div id="alertLogin" class="db-n invalid-feedback"></div>
                 </div>
 
                 <div class="menu-modal">
 
                     <!-- <button class="teste">Entrar</button> -->
-                    <input type="submit" value="OK">
                     <a href="">
-                        <button class="teste">inscrisao</button>
+                        <button type="submit" class="teste">Entrar</button>
+                    </a>
+                    <a id="btIns" class="teste">
+                        inscrisao
                     </a>
                 </div>
             </form>
@@ -68,7 +75,9 @@ if (!isset($_SESSION['nome'])) {
 
 
 <?php
-} else {
+}
+
+if (isset($_SESSION['nome'])) {
 ?>
     <div id="modale">
         <div class="contenu-md">

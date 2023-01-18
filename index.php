@@ -28,6 +28,7 @@ if (!isset($_SESSION)) {
     $carroselVoiture = $requete2->fetchALL();
 
     ?>
+
     <div class="contenu">
         <form method="POST" class="formInput" action="resultat.php">
             <select name="type" class="selectInput " name="type" id="type">
@@ -73,32 +74,47 @@ if (!isset($_SESSION)) {
     </section>
 
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
-    <!-- Initialize Swiper -->
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            slidesPerView: "auto",
-            speed: 5000,
-            spaceBetween: 15,
-            loop: true,
-            freeMode: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: "#next-testimonial",
-                prevEl: "#prev-testimonial",
-            },
-            autoplay: {
-                delay: 500,
-                disableOnInteraction: false,
-            },
-        });
-    </script>
+    <?php
+    if (!isset($_SESSION['accepte-cookie']) || !$_SESSION['accepte-cookie']) {
+    ?>
+
+        <div class="cookie-alert-overlay">
+            <div class="cookie-alert">
+                En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies<a href="accepte-cookie.php">OK</a>
+            </div>
+        </div>
+    <?php
+    }
+
+    ?>
 </body>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: "auto",
+        speed: 5000,
+        spaceBetween: 15,
+        loop: true,
+        freeMode: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: "#next-testimonial",
+            prevEl: "#prev-testimonial",
+        },
+        autoplay: {
+            delay: 500,
+            disableOnInteraction: false,
+        },
+    });
+</script>
 
 
 

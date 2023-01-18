@@ -46,19 +46,19 @@ if (isset($_POST['nom'])) {
     <div class="form-group">
         <label class="c" for="inputNom">Nom</label>
         <input id="inputNom" name="nom" value="<?= $produit['nom'] ?>" type="text" class="form-control" placeholder="Nom du produit">
-        <div id="alertNom" class="db-n invalid-feedback"><i class="fa-solid fa-circle-exclamation"></i></div>
+        <div id="alertNom" class="db-n invalid-feedback"><i class="fa-solid fa-circle-exclamation"></i> 20 caracter max</div>
     </div>
 
     <div class="form-group">
         <label for="inputDescription" class="form-label mt-4">Description</label>
         <textarea id="inputDescription" name="description" class="form-control" id="inputDescription" rows="3"><?= $produit['description'] ?></textarea>
-        <div id="alertDescription" class="db-n invalid-feedback"><i class="fa-solid fa-circle-exclamation"></i></div>
+        <div id="alertDescription" class="db-n invalid-feedback"><i class="fa-solid fa-circle-exclamation"></i> 20 caracter min</div>
     </div>
 
     <div class="form-group">
         <label for="inputDescriptionEn" class="form-label mt-4">Description anglais</label>
         <textarea id="inputDescriptionEn" name="descriptionEn" class="form-control" rows="3"><?= $produit['description_en'] ?></textarea>
-        <div id="alertDescriptionEn" class="db-n invalid-feedback"><i class="fa-solid fa-circle-exclamation"></i></div>
+        <div id="alertDescriptionEn" class="db-n invalid-feedback"><i class="fa-solid fa-circle-exclamation"></i> 20 caracter min</div>
     </div>
 
     <div class="form-group">

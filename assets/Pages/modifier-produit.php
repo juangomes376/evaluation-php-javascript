@@ -1,7 +1,7 @@
-<?php include 'header.php'; ?>
-<?php include 'navbar.php'; ?>
-<?php include './session/conexao.php'; ?>
-<script defer src="./assets/js/regle.js"></script>
+<?php include '/assets/morso/header.php'; ?>
+<?php include '/assets/morso/navbar.php'; ?>
+
+
 <?php
 
 $requete = $conexion->prepare('SELECT * FROM produits WHERE id = ? ;');
@@ -34,7 +34,7 @@ if (isset($_POST['nom'])) {
     ]);
 
     //Redirection vers la page d'accueil
-    header('Location: index.php');
+    header('Location: /index.php');
 }
 
 

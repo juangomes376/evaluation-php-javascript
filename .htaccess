@@ -1,1 +1,7 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^php.linux$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^php.linux$
+RewriteCond %{REQUEST_URI} !/driver/Projetos/trabalho
+RewriteRule (.*) /driver/Projetos/trabalho/$1 [L]
+
 php_flag display_errors On

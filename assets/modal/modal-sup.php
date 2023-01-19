@@ -12,7 +12,7 @@
 </div>
 
 <script>
-    document.getElementById("bt-ok").addEventListener('click', e => document.location = './supprimer-produit.php?id=' + articleAsupprimer)
+    document.getElementById("bt-ok").addEventListener('click', e => document.location = '/assets/script-php/supprimer-produit.php?id=' + articleAsupprimer)
 </script>
 
 

@@ -1,18 +1,15 @@
-<?php include './session/protection.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/session/protection.php'; ?>
 
-<!DOCTYPE html>
-<html lang="fr">
 
-<?php include 'header.php'; ?>
-<script defer src="./assets/js/regle.js"></script>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/morso/header.php'; ?>
+
 <title>Ajout produit</title>
 </head>
 
 <body>
-
-    <?php include 'navbar.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/morso/navbar.php'; ?>
     <?php
-    include('./session/conexao.php');
+
 
     // preparation de la requete
     $requete = $conexion->prepare("SELECT * FROM Types");

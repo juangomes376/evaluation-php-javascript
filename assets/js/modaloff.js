@@ -1,6 +1,4 @@
 
-
-
 const buttonInscricao = document.getElementById('btIns')
 buttonInscricao.addEventListener('click', evenementInscricao)
 function evenementInscricao(e) {

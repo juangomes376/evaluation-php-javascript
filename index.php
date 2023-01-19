@@ -7,16 +7,16 @@ if (!isset($_SESSION)) {
 <!DOCTYPE html>
 <html lang="fr">
 
-<?php include 'header.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/morso/header.php'; ?>
 <title>Home</title>
 </head>
 
 <body>
 
-    <?php include 'navbar.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/morso/navbar.php'; ?>
 
     <?php
-    include('./session/conexao.php');
+
 
 
     $requete = $conexion->prepare("SELECT * FROM Types");
@@ -30,7 +30,7 @@ if (!isset($_SESSION)) {
     ?>
 
     <div class="contenu">
-        <form method="POST" class="formInput" action="resultat.php">
+        <form method="POST" class="formInput" action="assets/Pages/resultat.php">
             <select name="type" class="selectInput " name="type" id="type">
                 <option disabled selected value>Sélectionner une option</option>
                 <option value="tout">Tout</option>
@@ -63,7 +63,7 @@ if (!isset($_SESSION)) {
                         <div class="">
                             <h5 class="prix"> <?php echo $article["prix"]; ?> $</h5>
                         </div>
-                        <a href="details.php?id=<?= $article['id'] ?>" class="btn2">Details</a>
+                        <a href="/assets/Pages/details.php?id=<?= $article['id'] ?>" class="btn2">Details</a>
                     </div>
                 </div>
             <?php
@@ -81,7 +81,7 @@ if (!isset($_SESSION)) {
 
         <div class="cookie-alert-overlay">
             <div class="cookie-alert">
-                En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies<a href="accepte-cookie.php">OK</a>
+                En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies<a href="/assets/script-php/accepte-cookie.php">OK</a>
             </div>
         </div>
     <?php

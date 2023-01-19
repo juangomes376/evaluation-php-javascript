@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<?php include 'header.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/morso/header.php'; ?>
 <title>Home</title>
 </head>
 
 <body>
-    <?php include 'navbar.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/morso/navbar.php'; ?>
     <?php
-    include('./session/conexao.php');
+
 
     $requete = $conexion->prepare("SELECT * FROM produits WHERE ID  = ?;");
     $requete->execute([$_GET['id']]);

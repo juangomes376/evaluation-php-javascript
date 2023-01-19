@@ -1,5 +1,5 @@
 <?php
-include('./session/conexao-user.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/assets/session/conexao-user.php');
 
 if (isset($_POST['userins']) || isset($_POST['senhains'])) {
 

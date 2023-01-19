@@ -1,5 +1,5 @@
 <?php
-include('./session/conexao-user.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/assets/session/conexao-user.php');
 $_SESSION['erro'] = "falso";
 
 
@@ -86,13 +86,13 @@ if (isset($_SESSION['nome'])) {
             <div>
 
 
-                <a href="./resultat-user.php">
+                <a href="/assets/Pages/resultat-user.php">
                     <button class="teste">tout produit</button>
                 </a>
-                <a href="./ajout-produit.php">
+                <a href="/assets/Pages/ajout-produit.php">
                     <button class="teste">ajoutet produit</button>
                 </a>
-                <a href="./session/logout.php">
+                <a href="/assets/session/logout.php">
                     <button class="teste">logout</button>
                 </a>
             </div>

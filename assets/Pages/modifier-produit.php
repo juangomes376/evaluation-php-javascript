@@ -1,5 +1,5 @@
-<?php include '/assets/morso/header.php'; ?>
-<?php include '/assets/morso/navbar.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/morso/header.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/morso/navbar.php'; ?>
 
 
 <?php
